@@ -1,4 +1,4 @@
-var url = 'http://laravel.dev.com';
+var url = 'http://localhost/photoshare/public';
 window.addEventListener('load', function () {
   const like = document.getElementsByClassName("heart-like");
 
@@ -8,8 +8,8 @@ window.addEventListener('load', function () {
   }
 
   function likeFunction(e) {
-    if (e.target.src == 'http://laravel.dev.com/icons/heart-grey.png') {
-      e.target.src = 'http://laravel.dev.com/icons/heart-red.png';
+    if (e.target.src == url + '/icons/heart-grey.png') {
+      e.target.src = url + '/icons/heart-red.png';
       $.ajax({
         url: url + '/like/' + e.target.getAttribute('info'),
         type: 'GET',
@@ -19,7 +19,7 @@ window.addEventListener('load', function () {
       });
 
     } else {
-      e.target.src = 'http://laravel.dev.com/icons/heart-grey.png';
+      e.target.src = url + '/icons/heart-grey.png';
       $.ajax({
         url: url + '/dislike/' + e.target.getAttribute('info'),
         type: 'GET',
